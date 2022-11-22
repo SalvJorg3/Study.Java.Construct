@@ -3,10 +3,12 @@ package entities;
 //Criação da classe Product
 
 public class Product {
-  
- public String name;
- public double price;
- public int quantity;
+
+/*Encapsulamento de atributos 
+(programa não pode acessar diretamente os atributos)*/
+ private String name;
+ private double price;
+ private int quantity;
 
  /*  utilização do construtor: não tem o tipo de retorno 
  e executa no momento da instaciação do objeto
@@ -21,6 +23,28 @@ public class Product {
 
  }
 
+/* Utilização de sobrecarga (outra operação com
+o mesmo nome do construtor, porém com uma
+ lista de param. diferentes) */ 
+public Product(String name, double price) {
+   
+       this.name = name;
+       this.price = price;
+   
+    }
+
+/* Para permitir que o nome do produto possa ser atualizado
+ (por convenção depois dos contrutores)*/
+
+ public void setName(String name) {
+    this.name = name;
+ }
+
+/*Para permitir que o nome seja obtido */
+
+public String getName(){
+   return name;
+}
 
  public double totalValueInStock() {
     return price * quantity;

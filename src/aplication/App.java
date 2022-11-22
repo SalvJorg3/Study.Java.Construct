@@ -28,19 +28,24 @@ public class App {
     String name = sc.nextLine();
     System.out.print("Price: ");
     double price = sc.nextDouble();
-    System.out.print("Quantity in stock: ");
-    int quantity = sc.nextInt();
+//Chamada do construtor com apenas dois parâmetros 
+    Product product = new Product(name, price);
 
-/*Depois da criação das variáveis aux, instaciação do construtor
-(evita a criação de objetos inconsistentes*/
-    Product product = new Product(name, price, quantity); 
+/*Alteração do nome do produto com atributos privados 
+ (encapsulamento - private)*/
+
+ product.setName("Computer");
+
+ //Impressão do nome atualizado (metodo get) 
+
+ System.out.println("Updated name: " + product.getName());
     
     System.out.println();
     System.out.println("Product data: " + product);
 
     System.out.println();
     System.out.print("Enter the number of products to be added in stock: ");
-    quantity = sc.nextInt();
+    int quantity = sc.nextInt();
     product.addProducts(quantity);
 
     System.out.println();
